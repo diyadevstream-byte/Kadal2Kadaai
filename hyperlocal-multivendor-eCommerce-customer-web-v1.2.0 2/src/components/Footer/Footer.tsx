@@ -29,7 +29,7 @@ const Footer: FC = () => {
     youtubeLink = null,
   } = webSettings || {};
 
-  const siteFooterLogo = rawFooterLogo || "https://placehold.co/160x40?text=Logo";
+  const siteFooterLogo = rawFooterLogo || "/logo.png";
 
   useEffect(() => {
     if (webSettings?.footerScript) {

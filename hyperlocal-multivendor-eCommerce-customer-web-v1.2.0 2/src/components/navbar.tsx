@@ -71,8 +71,8 @@ export const Navbar: FC = () => {
     siteName = "Site Logo",
   } = webSettings || {};
 
-  const siteHeaderLogo = rawLogo || "https://placehold.co/160x40?text=Logo";
-  const siteHeaderDarkLogo = rawDarkLogo || "https://placehold.co/160x40?text=Logo";
+  const siteHeaderLogo = rawLogo || "/logo.png";
+  const siteHeaderDarkLogo = rawDarkLogo || "/logo.png";
 
   useEffect(() => {
     if (webSettings?.headerScript) {
