@@ -155,13 +155,13 @@ export const Navbar: FC = () => {
                   <img
                     src={siteHeaderLogo}
                     alt={siteName}
-                    className="h-8 sm:h-10 md:h-12 w-full sm:min-w-5 md:min-w-32 object-contain dark:hidden cursor-pointer"
+                    className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 object-cover rounded-full bg-white p-0.5 shadow-lg border border-white/15 cursor-pointer dark:hidden"
                   />
                   {/* Dark theme logo */}
                   <img
                     src={siteHeaderDarkLogo}
                     alt={siteName}
-                    className="h-8 sm:h-10 md:h-12 w-full sm:min-w-5 md:min-w-32 object-contain hidden dark:block cursor-pointer"
+                    className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 object-cover rounded-full bg-white p-0.5 shadow-lg border border-white/15 cursor-pointer hidden dark:block"
                   />
                 </Link>
               </NavbarBrand>

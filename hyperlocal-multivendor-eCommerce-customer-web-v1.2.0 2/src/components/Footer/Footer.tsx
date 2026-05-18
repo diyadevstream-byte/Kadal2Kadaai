@@ -62,8 +62,8 @@ const Footer: FC = () => {
                 <Image
                   src={siteFooterLogo}
                   alt={siteName}
-                  radius="none"
-                  classNames={{ img: "h-16 w-full", wrapper: "cursor-pointer" }}
+                  radius="full"
+                  classNames={{ img: "h-16 w-16 object-cover rounded-full bg-white p-0.5 shadow-lg border border-white/10", wrapper: "cursor-pointer rounded-full bg-white p-0.5 shadow-lg" }}
                 />
               </Link>
             </div>
@@ -275,10 +275,10 @@ const Footer: FC = () => {
                 <Image
                   src={siteFooterLogo}
                   alt={siteName}
-                  radius="none"
+                  radius="full"
                   classNames={{
-                    img: "h-12 md:h-16 lg:h-20 w-full",
-                    wrapper: "cursor-pointer",
+                    img: "h-16 w-16 md:h-20 md:w-20 object-cover rounded-full bg-white p-0.5 shadow-lg border border-white/15",
+                    wrapper: "cursor-pointer rounded-full bg-white p-0.5 shadow-lg",
                   }}
                 />
               </Link>
