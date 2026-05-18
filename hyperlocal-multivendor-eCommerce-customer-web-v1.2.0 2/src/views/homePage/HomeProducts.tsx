@@ -24,11 +24,8 @@ interface HomeProductProps {
 const fetcher = async () => {
   // ✅ Get location from cookie
   const location = getCookie("userLocation") as UserLocation | undefined;
-  const { lat = "", lng = "" } = location || {};
-
-  if (!lat || !lng) {
-    return [];
-  }
+  const lat = location?.lat || "13.0827";
+  const lng = location?.lng || "80.2707";
 
   // ✅ Get category with query > cookie > undefined
   const validSlug = getActiveCategory();

@@ -24,11 +24,8 @@ const fetcher = async () => {
   const validSlug = getActiveCategory();
 
   const location = getCookie("userLocation") as UserLocation | undefined;
-  const { lat = "", lng = "" } = location || {};
-
-  if (!lat || !lng) {
-    return [];
-  }
+  const lat = location?.lat || "13.0827";
+  const lng = location?.lng || "80.2707";
 
   const response = await getBrands({
     scope_category_slug: validSlug,

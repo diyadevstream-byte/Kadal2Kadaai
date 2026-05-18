@@ -24,11 +24,8 @@ interface HomeStoreProps {
 // SWR fetcher
 const fetcher = async () => {
   const locationCookie = (getCookie("userLocation") as UserLocation) || {};
-  const lat = locationCookie.lat || "";
-  const lng = locationCookie.lng || "";
-  if (lat == "" && lng == "") {
-    return [];
-  }
+  const lat = locationCookie.lat || "13.0827";
+  const lng = locationCookie.lng || "80.2707";
   const response = await getStores({ latitude: lat, longitude: lng });
   if (!response.success || !response.data) {
     console.error(response.message || "Failed to fetch Stores");

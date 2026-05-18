@@ -23,11 +23,8 @@ const fetcher = async () => {
   const scopeCategorySlug = getActiveCategory();
 
   const location = getCookie("userLocation") as UserLocation | undefined;
-  const { lat = "", lng = "" } = location || {};
-
-  if (!lat || !lng) {
-    return { top: [], carousel: [] };
-  }
+  const lat = location?.lat || "13.0827";
+  const lng = location?.lng || "80.2707";
 
   const response = await getBannerImages({
     scope_category_slug: scopeCategorySlug,
