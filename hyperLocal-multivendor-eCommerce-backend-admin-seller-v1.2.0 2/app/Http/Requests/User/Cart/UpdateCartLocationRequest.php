@@ -14,6 +14,20 @@ class UpdateCartLocationRequest extends FormRequest
         return true;
     }
 
+    protected function prepareForValidation()
+    {
+        $latitude = $this->input('latitude');
+        $longitude = $this->input('longitude');
+
+        if (is_null($latitude) || $latitude === '' || !is_numeric($latitude)) {
+            $this->merge(['latitude' => 13.0827]);
+        }
+
+        if (is_null($longitude) || $longitude === '' || !is_numeric($longitude)) {
+            $this->merge(['longitude' => 80.2707]);
+        }
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *

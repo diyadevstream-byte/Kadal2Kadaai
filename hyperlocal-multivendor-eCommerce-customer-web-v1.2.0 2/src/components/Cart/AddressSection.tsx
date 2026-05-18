@@ -49,8 +49,9 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
   const { data: initialData, isLoading: initialLoading } = useSWR(
     initialDataKey,
     async () => {
-      const location = getCookie("userLocation") as UserLocation | undefined;
-      const { lat = "", lng = "" } = location || {};
+      const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+      const lat = locationCookie.lat || "13.0827";
+      const lng = locationCookie.lng || "80.2707";
       const response = await getAddresses({
         page: 1,
         per_page: 1,
@@ -84,8 +85,9 @@ const AddressSection: FC<AddressSectionProps> = ({ onAddAddressModalOpen }) => {
   const { data: allAddressesData, isLoading: allAddressesLoading } = useSWR(
     allAddressesKey,
     async () => {
-      const location = getCookie("userLocation") as UserLocation | undefined;
-      const { lat = "", lng = "" } = location || {};
+      const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+      const lat = locationCookie.lat || "13.0827";
+      const lng = locationCookie.lng || "80.2707";
       const response = await getAddresses({
         page: 1,
         per_page: total,

@@ -143,7 +143,7 @@ function GoogleMap(props: GoogleMapProps) {
         const startTime = Date.now();
 
         const checkGoogleMaps = () => {
-          if (typeof window !== "undefined" && window.google?.maps?.importLibrary) {
+          if (typeof window !== "undefined" && typeof window.google?.maps?.importLibrary === "function") {
             resolve(true);
           } else if (Date.now() - startTime > timeout) {
             resolve(false);

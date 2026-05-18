@@ -31,8 +31,9 @@ export const updateCartData = async (
       return;
     }
 
-    const { lat = "", lng = "" } =
-      (getCookie("userLocation") as UserLocation) || {};
+    const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+    const lat = locationCookie.lat || "13.0827";
+    const lng = locationCookie.lng || "80.2707";
 
     store.dispatch(setCartLoading(true));
     const state = store.getState();

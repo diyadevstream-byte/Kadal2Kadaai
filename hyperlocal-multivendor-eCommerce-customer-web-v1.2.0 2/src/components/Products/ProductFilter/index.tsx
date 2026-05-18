@@ -112,8 +112,9 @@ const ProductFilter: FC<ProductFilterProps> = ({
 
       setIsSidebarLoading(true);
       try {
-        const { lat = "", lng = "" } =
-          (getCookie("userLocation") as UserLocation) || {};
+        const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+        const lat = locationCookie.lat || "13.0827";
+        const lng = locationCookie.lng || "80.2707";
         const res = await getSidebarFilters({
           latitude: lat,
           longitude: lng,

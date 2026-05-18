@@ -88,12 +88,19 @@ export const onAppLoad = () => {
     }
   }
 
-  const userLocation = getCookie("userLocation") as UserLocation;
+  let userLocation = getCookie("userLocation") as UserLocation;
 
   if (!userLocation) {
-    // Open location modal if no location is set (removed the share link exclusion)
-    document.getElementById("location-modal-btn")?.click();
-    addToast({ color: "default", title: "Please Select Location First !" });
+    // Set a fallback default location (Chennai, inside the active delivery zone of Kadal2Kadaai)
+    userLocation = {
+      lat: 13.0827,
+      lng: 80.2707,
+      placeName: "Chennai, Tamil Nadu, India",
+      placeDescription: "Chennai, Tamil Nadu, India",
+    };
+    setCookie("userLocation", userLocation);
+    onLocationChange();
+    addToast({ color: "success", title: "Location initialized to Chennai Delivery Zone !" });
   }
 };
 

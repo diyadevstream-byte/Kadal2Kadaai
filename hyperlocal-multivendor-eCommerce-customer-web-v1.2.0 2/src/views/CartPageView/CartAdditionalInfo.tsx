@@ -31,7 +31,9 @@ interface CartAdditionalInfoProps {
 const CartAdditionalInfo: FC<CartAdditionalInfoProps> = ({ cart }) => {
   const { t } = useTranslation();
   const [deliveryInstructions, setDeliveryInstructions] = useState<string>("");
-  const userLocation = getCookie("userLocation") as UserLocation;
+  const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+  const lat = locationCookie.lat || "13.0827";
+  const lng = locationCookie.lng || "80.2707";
   const items = cart?.items ?? [];
 
   const ProductSlugs =
@@ -49,8 +51,8 @@ const CartAdditionalInfo: FC<CartAdditionalInfoProps> = ({ cart }) => {
     getProducts({
       per_page: 10,
       page: 1,
-      latitude: userLocation.lat,
-      longitude: userLocation.lng,
+      latitude: lat,
+      longitude: lng,
       exclude_product: ProductSlugs || "",
       include_child_categories: 0,
     })

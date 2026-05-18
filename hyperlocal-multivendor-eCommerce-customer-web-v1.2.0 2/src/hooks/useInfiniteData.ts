@@ -70,12 +70,9 @@ export const useInfiniteData = <T>({
     swrKey,
     async ([, params]: [string, string]) => {
       const currentParams = JSON.parse(params);
-      const { lat = "", lng = "" } =
-        (getCookie("userLocation") as UserLocation) || {};
-
-      if (passLocationRef.current && (!lat || !lng)) {
-        return { data: [], total: 0 };
-      }
+      const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+      const lat = locationCookie.lat || "13.0827";
+      const lng = locationCookie.lng || "80.2707";
 
       const location = passLocationRef.current
         ? { latitude: lat, longitude: lng }
@@ -127,7 +124,9 @@ export const useInfiniteData = <T>({
     isLoadingRef.current = true;
     currentPageRef.current = nextPage;
 
-    const { lat = "", lng = "" } = getCookie("userLocation") as UserLocation;
+    const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+    const lat = locationCookie.lat || "13.0827";
+    const lng = locationCookie.lng || "80.2707";
     const location = passLocationRef.current
       ? { latitude: lat, longitude: lng }
       : {};

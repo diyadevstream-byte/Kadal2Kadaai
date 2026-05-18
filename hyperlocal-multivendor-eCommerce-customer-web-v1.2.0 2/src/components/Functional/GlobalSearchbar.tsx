@@ -22,8 +22,9 @@ const searchFetcher = async (
   const [, query] = key.split(":");
   if (!query || query.trim().length < 2) return null;
 
-  const { lat = "", lng = "" } =
-    (getCookie("userLocation") as UserLocation) || {};
+  const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+  const lat = locationCookie.lat || "13.0827";
+  const lng = locationCookie.lng || "80.2707";
 
   const response = await getProducts({
     search: query,

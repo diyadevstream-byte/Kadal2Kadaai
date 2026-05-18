@@ -23,7 +23,9 @@ interface HomeStoreProps {
 
 // SWR fetcher
 const fetcher = async () => {
-  const { lat = "", lng = "" } = getCookie("userLocation") as UserLocation;
+  const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+  const lat = locationCookie.lat || "";
+  const lng = locationCookie.lng || "";
   if (lat == "" && lng == "") {
     return [];
   }

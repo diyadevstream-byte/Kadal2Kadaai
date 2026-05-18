@@ -114,10 +114,11 @@ export const getUserLocationFromContext = async (
       }
       return parsedLocation;
     }
-    return null;
+    // Return default Chennai location coordinates in SSR to prevent 422 validation errors on first-visit
+    return { lat: "13.0827", lng: "80.2707" };
   } catch (error) {
-    console.error("Error getting user Location from context:", error);
-    return null;
+    console.error("Error getting user Location from context, using default:", error);
+    return { lat: "13.0827", lng: "80.2707" };
   }
 };
 

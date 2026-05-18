@@ -39,7 +39,9 @@ const PER_PAGE = 20;
 
 // SWR fetcher for client
 const fetcher = async (slug: string) => {
-  const { lat = "", lng = "" } = getCookie("userLocation") as UserLocation;
+  const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+  const lat = locationCookie.lat || "13.0827";
+  const lng = locationCookie.lng || "80.2707";
   const res = await getProductBySlug({
     slug,
     latitude: lat,
@@ -53,7 +55,9 @@ const fetcher = async (slug: string) => {
 
 // SWR fetcher for similar products
 const similarProductsFetcher = async (slug: string) => {
-  const { lat = "", lng = "" } = getCookie("userLocation") as UserLocation;
+  const locationCookie = (getCookie("userLocation") as UserLocation) || {};
+  const lat = locationCookie.lat || "13.0827";
+  const lng = locationCookie.lng || "80.2707";
 
   const res = await getProducts({
     exclude_product: slug,
