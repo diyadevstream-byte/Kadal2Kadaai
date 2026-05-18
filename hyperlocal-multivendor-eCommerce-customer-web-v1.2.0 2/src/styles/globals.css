@@ -8,7 +8,7 @@ body {
   padding-right: 0 !important;
   max-width: 100vw !important;
   overflow-x: hidden !important;
-  background: linear-gradient(-45deg, #e0f2fe, #ccfbf1, #e0f7fa, #bae6fd) !important;
+  background: linear-gradient(-45deg, #021625, #083344, #0c4a6e, #0f172a) !important;
   background-size: 400% 400% !important;
   animation: oceanFlow 20s ease infinite !important;
   transition: background-color 0.5s ease;
@@ -16,7 +16,7 @@ body {
 
 .dark html,
 .dark body {
-  background: linear-gradient(-45deg, #022c22, #083344, #0c4a6e, #134e4a) !important;
+  background: linear-gradient(-45deg, #01121d, #022c22, #043854, #0f172a) !important;
   background-size: 400% 400% !important;
   animation: oceanFlow 20s ease infinite !important;
 }

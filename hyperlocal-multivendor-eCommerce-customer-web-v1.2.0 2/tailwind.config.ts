@@ -69,8 +69,8 @@ const config: import("tailwindcss").Config = {
       themes: {
         light: {
           colors: {
-            background: "#f0f9ff", // Light sea water blue
-            foreground: "#0c4a6e", // Deep ocean navy
+            background: "#021625", // Deep dark sea water blue
+            foreground: "#e0f2fe", // Highly legible light ocean text
             focus: "#f97316", // Orange focus
             primary: {
               50: "#fff7ed",
@@ -102,8 +102,8 @@ const config: import("tailwindcss").Config = {
         },
         dark: {
           colors: {
-            background: "#082f49", // Deep ocean blue
-            foreground: "#f0f9ff", // Light sea water text
+            background: "#01121d", // Deep dark sea water blue
+            foreground: "#e0f2fe", // Highly legible light ocean text
             focus: "#f97316", // Orange focus
             primary: {
               50: "#fff7ed",
