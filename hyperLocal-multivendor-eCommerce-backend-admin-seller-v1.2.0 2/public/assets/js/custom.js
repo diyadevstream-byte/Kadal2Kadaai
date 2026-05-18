@@ -954,7 +954,9 @@ try {
         options.skin = "oxide-dark";
         options.content_css = "dark";
     }
-    hugeRTE.init(options);
+    if (typeof hugeRTE !== 'undefined' && document.querySelector(options.selector)) {
+        hugeRTE.init(options);
+    }
 } catch (e) {
     console.log(e)
 }
