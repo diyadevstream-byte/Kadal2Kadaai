@@ -44,11 +44,19 @@ return Application::configure(basePath: dirname(__DIR__))
         });
         $middleware->redirectUsersTo(function (Request $request) {
             if ($request->is('admin/login') || $request->is('admin')) {
-                return route('admin.dashboard');
+                if (Auth::guard('admin')->check()) {
+                    return route('admin.dashboard');
+                }
             } elseif ($request->is('seller/login') || $request->is('seller')) {
-                return route('seller.dashboard');
+                if (Auth::guard('seller')->check()) {
+                    return route('seller.dashboard');
+                }
+            } else {
+                if (Auth::check()) {
+                    return '/';
+                }
             }
-            return redirect('/');
+            return null;
         });
         $middleware->alias([
             'validate.admin' => ValidateAdmin::class,
