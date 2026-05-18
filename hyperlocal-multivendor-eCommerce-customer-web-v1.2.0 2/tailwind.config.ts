@@ -69,41 +69,67 @@ const config: import("tailwindcss").Config = {
       themes: {
         light: {
           colors: {
-            background: "#ffffff",
-            foreground: "#000000",
-            focus: "#3b82f6", // Blue focus
+            background: "#f0f9ff", // Light sea water blue
+            foreground: "#0c4a6e", // Deep ocean navy
+            focus: "#f97316", // Orange focus
             primary: {
-              50: "#eff6ff",
-              100: "#dbeafe",
-              200: "#bfdbfe",
-              300: "#93c5fd",
-              400: "#60a5fa",
-              500: "#3b82f6",
-              600: "#2563eb",
-              700: "#1d4ed8",
-              800: "#1e40af",
-              900: "#1e3a8a",
-              DEFAULT: "#3b82f6",
+              50: "#fff7ed",
+              100: "#ffedd5",
+              200: "#fed7aa",
+              300: "#fdba74",
+              400: "#fb923c",
+              500: "#f97316", // Vibrant Orange (Default)
+              600: "#ea580c",
+              700: "#c2410c",
+              800: "#9a3412",
+              900: "#7c2d12",
+              DEFAULT: "#f97316",
+            },
+            secondary: {
+              50: "#f0fdfa",
+              100: "#ccfbf1",
+              200: "#99f6e4",
+              300: "#5eead4",
+              400: "#2dd4bf",
+              500: "#0d9488", // Deep Teal/Sea Water
+              600: "#0f766e",
+              700: "#115e59",
+              800: "#134e4a",
+              900: "#134e4a",
+              DEFAULT: "#0d9488",
             },
           },
         },
         dark: {
           colors: {
-            background: "#000000",
-            foreground: "#FFFFFF",
-            focus: "#60a5fa", // Brighter blue for dark mode
+            background: "#082f49", // Deep ocean blue
+            foreground: "#f0f9ff", // Light sea water text
+            focus: "#f97316", // Orange focus
             primary: {
-              50: "#eff6ff",
-              100: "#dbeafe",
-              200: "#bfdbfe",
-              300: "#93c5fd",
-              400: "#60a5fa",
-              500: "#3b82f6",
-              600: "#2563eb",
-              700: "#1d4ed8",
-              800: "#1e40af",
-              900: "#1e3a8a",
-              DEFAULT: "#3b82f6",
+              50: "#fff7ed",
+              100: "#ffedd5",
+              200: "#fed7aa",
+              300: "#fdba74",
+              400: "#fb923c",
+              500: "#f97316", // Vibrant Orange (Default)
+              600: "#ea580c",
+              700: "#c2410c",
+              800: "#9a3412",
+              900: "#7c2d12",
+              DEFAULT: "#f97316",
+            },
+            secondary: {
+              50: "#f0fdfa",
+              100: "#ccfbf1",
+              200: "#99f6e4",
+              300: "#5eead4",
+              400: "#2dd4bf",
+              500: "#0d9488", // Deep Teal/Sea Water
+              600: "#0f766e",
+              700: "#115e59",
+              800: "#134e4a",
+              900: "#134e4a",
+              DEFAULT: "#0d9488",
             },
           },
         },

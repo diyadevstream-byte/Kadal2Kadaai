@@ -51,7 +51,7 @@ const Footer: FC = () => {
   }, [webSettings?.footerScript]);
 
   return (
-    <footer className="bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 text-white w-full">
+    <footer className="bg-linear-to-br from-sky-900 via-cyan-900 to-teal-900 text-white w-full">
       <div className="w-full max-w-[1536px] mx-auto px-2 sm:px-6 pt-6 sm:pt-12 pb-3 sm:pb-5">
         {/* Mobile Compact Layout */}
         <div className="block sm:hidden space-y-6">
