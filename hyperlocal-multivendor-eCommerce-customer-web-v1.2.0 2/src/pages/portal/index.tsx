@@ -57,9 +57,9 @@ export default function PortalDashboard() {
               </div>
             </Link>
 
-            {/* Admin Panel */}
+             {/* Admin Panel */}
             <a 
-              href="http://localhost:8001/admin/login" 
+              href="http://127.0.0.1:8001/admin/login" 
               className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center justify-center text-center group cursor-pointer hover:-translate-y-2 hover:bg-white/10 hover:border-orange-500 hover:shadow-[0_20px_40px_-10px_rgba(249,115,22,0.2)] transition-all duration-300 no-underline"
             >
               <div className="w-16 h-16 rounded-full bg-teal-900/50 flex items-center justify-center mb-6 border border-teal-400/20 group-hover:bg-orange-500/10 group-hover:border-orange-500/30 transition-all">
@@ -77,7 +77,7 @@ export default function PortalDashboard() {
 
             {/* Seller Panel */}
             <a 
-              href="http://localhost:8001/seller/login" 
+              href="http://127.0.0.1:8001/seller/login" 
               className="bg-white/5 border border-white/10 backdrop-blur-md rounded-2xl p-8 flex flex-col items-center justify-center text-center group cursor-pointer hover:-translate-y-2 hover:bg-white/10 hover:border-orange-500 hover:shadow-[0_20px_40px_-10px_rgba(249,115,22,0.2)] transition-all duration-300 no-underline"
             >
               <div className="w-16 h-16 rounded-full bg-indigo-900/50 flex items-center justify-center mb-6 border border-indigo-400/20 group-hover:bg-orange-500/10 group-hover:border-orange-500/30 transition-all">
