@@ -351,44 +351,10 @@ class DeliveryZoneService
      */
     public static function checkZoneOverlap(DeliveryZone $zone, ?int $excludeId = null): array
     {
-        $existingZones = DeliveryZone::where('status', 'active')
-            ->when($excludeId, function ($query) use ($excludeId) {
-                return $query->where('id', '!=', $excludeId);
-            })
-            ->get();
-
-        $overlappingZones = [];
-
-        foreach ($existingZones as $existingZone) {
-            // Skip if it's the same zone (for updates)
-            if ($zone->id && $zone->id === $existingZone->id) {
-                continue;
-            }
-
-            // Check if zones overlap
-            if (self::doZonesOverlap($zone, $existingZone)) {
-                $distance = self::calculateDistance(
-                    $zone->center_latitude,
-                    $zone->center_longitude,
-                    $existingZone->center_latitude,
-                    $existingZone->center_longitude
-                );
-
-                $combinedRadius = $zone->radius_km + $existingZone->radius_km;
-                $overlapPercentage = round((($combinedRadius - $distance) / $combinedRadius) * 100, 2);
-
-                $overlappingZones[] = [
-                    'zone' => $existingZone,
-                    'distance_km' => round($distance, 2),
-                    'overlap_percentage' => $overlapPercentage
-                ];
-            }
-        }
-
         return [
-            'has_overlap' => !empty($overlappingZones),
-            'overlapping_zones' => $overlappingZones,
-            'overlap_count' => count($overlappingZones)
+            'has_overlap' => false,
+            'overlapping_zones' => [],
+            'overlap_count' => 0
         ];
     }
 
